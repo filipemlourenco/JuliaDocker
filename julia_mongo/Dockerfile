@@ -12,12 +12,7 @@ RUN mkdir "$JULIA_PATH"
 RUN tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1
 RUN rm julia.tar.gz;
 
-RUN julia -e  "Pkg.add(\"CSV\")"
-RUN julia -e "Pkg.clone(\"https://github.com/AntonioLoureiro/Mongo.jl\")" &&\
-    "Pkg.build(\"Mongo\")" &&\
-    "Pkg.clone(\"https://github.com/AntonioLoureiro/ECharts.jl\"))" &&\
-    "Pkg.clone(\"https://github.com/AntonioLoureiro/Pers\"))" &&\
-    "Pkg.add(\"CSV\"))" &&\
+RUN julia -e  "Pkg.add(\"CSV\")" &&\
     "Pkg.add(\"JSON\"))" 
 
 
