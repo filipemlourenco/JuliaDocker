@@ -6,8 +6,6 @@ RUN apt-get install -y telnet git wget nano net-tools zip unzip vim ca-certifica
 ENV JULIA_PATH /usr/local/julia
 ENV PATH $JULIA_PATH/bin:$PATH
 ENV CURL_CA_BUNDLE /etc/ssl/certs/ca-certificates.crt
-RUN echo "capath=/etc/ssl/certs/" > /root/.curlrc
-RUN echo "cacert=/etc/ssl/certs/ca-certificates.crt" >> /root/.curlrc
 
 ENV JULIA_VERSION 0.6.4
 ENV dirArch x86
