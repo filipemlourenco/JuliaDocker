@@ -12,8 +12,7 @@ RUN mkdir "$JULIA_PATH"
 RUN tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1
 RUN rm julia.tar.gz;
 
-RUN julia -e  "Pkg.add(\"CSV\")" &&\
-    "Pkg.add(\"JSON\"))" 
+RUN julia -e  "Pkg.add(\"JSON\")"
 
 
 
