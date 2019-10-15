@@ -16,7 +16,7 @@ RUN julia -e  "Pkg.add(\"JSON\")"
 RUN julia -e  "Pkg.add(\"CSV\")"
 
 #RUN julia -e  "Pkg.clone(\"https://github.com/AntonioLoureiro/ECharts.jl\"))" 
-RUN julia -e  "Pkg.clone(\"https://github.com/AntonioLoureiro/Pers\"))" 
+RUN julia -e  "Pkg.clone(\"https://github.com/AntonioLoureiro/Pers\")" 
 
 
 
