@@ -23,8 +23,8 @@ RUN julia -e  "Pkg.add(\"Plots\")"
 RUN julia -e  "Pkg.add(\"PyPlot\")"
 RUN julia -e  "Pkg.add(\"GR\")"
 RUN julia -e  "Pkg.add(\"StatPlots\")"
-#RUN julia -e  "Pkg.clone(\"https://github.com/AntonioLoureiro/Pers\")" 
-#RUN julia -e  "Pkg.clone(\"https://github.com/AntonioLoureiro/ECharts.jl\")" 
+RUN julia -e  "Pkg.clone(\"https://github.com/AntonioLoureiro/Pers\")" 
+RUN julia -e  "Pkg.clone(\"https://github.com/AntonioLoureiro/ECharts\")" 
 
 
 
