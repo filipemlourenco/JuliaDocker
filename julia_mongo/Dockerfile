@@ -1,7 +1,7 @@
 FROM mongo:3.2
 
 RUN apt-get update
-RUN apt-get install -y telnet git wget nano net-tools zip unzip vim ca-certificates curl apache2 php5 gcc g++
+RUN apt-get install -y telnet git wget nano net-tools zip unzip vim ca-certificates curl apache2 php5 gcc g++ php5-ldap
 
 ENV JULIA_PATH /usr/local/julia
 ENV PATH $JULIA_PATH/bin:$PATH
