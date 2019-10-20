@@ -34,3 +34,19 @@ RUN julia -e  "Pkg.add(\"HTTP\", v\"0.6.15\")"
 RUN julia -e  "Pkg.add(\"Formatting\", v\"0.3.4\")"
 RUN julia -e  "Pkg.add(\"DataFramesMeta\", v\"0.3.0\")"
 RUN julia -e  "Pkg.add(\"XMLDict\", v\"0.1.3\")"
+
+
+# Set Apache environment variables (can be changed on docker run with -e)
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+ENV APACHE_PID_FILE /var/run/apache2.pid
+ENV APACHE_RUN_DIR /var/run/apache2
+ENV APACHE_LOCK_DIR /var/lock/apache2
+
+ADD start.sh /start.sh
+RUN chmod 0755 /start.sh
+CMD ["bash", "start.sh"]
+
+
+
