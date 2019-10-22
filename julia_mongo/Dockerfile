@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 #package dependencies
 RUN  apt-get update && apt-get install tzdata -y && \
-     apt-get install gcc vim sudo php apache2 git unzip telnet hdf5-tools libbson-dev libmongoc-dev libhttp-parser-dev curl wget -y && \
+     apt-get install gcc vim sudo php apache2 git unzip telnet hdf5-tools php-ldap libbson-dev libmongoc-dev libhttp-parser-dev curl wget -y && \
      apt-get update -y
 
 #JULIA 
