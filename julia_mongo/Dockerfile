@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 #package dependencies
 RUN  apt-get update && apt-get install tzdata -y && \
-     apt-get install gcc vim sudo php apache2 git unzip telnet hdf5-tools curl wget -y && \
+     apt-get install gcc vim sudo php apache2 git unzip telnet hdf5-tools libhttp-parser-dev curl wget -y && \
      apt-get update -y
 
 #JULIA 
@@ -47,6 +47,8 @@ RUN julia -e  "Pkg.add(\"HTTP\", v\"0.6.15\")"
 RUN julia -e  "Pkg.add(\"Formatting\", v\"0.3.4\")"
 RUN julia -e  "Pkg.add(\"DataFramesMeta\", v\"0.3.0\")"
 RUN julia -e  "Pkg.add(\"XMLDict\", v\"0.1.3\")"
+RUN julia -e  "Pkg.build(\"HttpParser\")"
+RUN julia -e "using Plots;using GR;using HttpParser;using XMLDict;using HTTP;using JLD;using Mux"
 
 # Apache configuration
 ENV APACHE_RUN_USER www-data
