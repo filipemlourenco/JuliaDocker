@@ -48,7 +48,7 @@ RUN julia -e  "Pkg.add(\"Formatting\", v\"0.3.4\")"
 RUN julia -e  "Pkg.add(\"DataFramesMeta\", v\"0.3.0\")"
 RUN julia -e  "Pkg.add(\"XMLDict\", v\"0.1.3\")"
 RUN julia -e  "Pkg.build(\"HttpParser\")"
-RUN julia -e "using Plots;using GR;using HttpParser;using XMLDict;using HTTP;using JLD;using Mux"
+RUN julia -e "using Plots;using GR;using HttpParser;using XMLDict;using HTTP;using JLD;using Mux;using Mongo;using DataFrames;using JSON;using PyPlot;using LightXML"
 
 # Apache configuration
 ENV APACHE_RUN_USER www-data
