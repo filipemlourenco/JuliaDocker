@@ -16,10 +16,10 @@ RUN rm julia.tar.gz;
 
 #MONGO
 RUN apt-get update && apt-get install -y gnupg2
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927
-RUN echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 656408e390cfb1f5
+RUN echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.4 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 RUN apt-get update
-RUN apt-get install -y mongodb-org=3.2.22 mongodb-org-server=3.2.22 mongodb-org-shell=3.2.22 mongodb-org-mongos=3.2.22 mongodb-org-tools=3.2.22
+RUN apt-get install -y mongodb-org mongodb-org-server mongodb-org-shell mongodb-org-mongos mongodb-org-tools
 
 RUN mkdir -p /data/db
 
